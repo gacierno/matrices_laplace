@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1527089244 source:c:\users\german\documents\matrices\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	"matriz.h"
+
+1522015391 source:c:\users\german\documents\matrices\pila.c
+	"pila.h"
+
+1522015400 c:\users\german\documents\matrices\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1526912243 c:\users\german\documents\matrices\matriz.h
+	<stdio.h>
+
+1527088404 source:c:\users\german\documents\matrices\matriz.c
+	<stdlib.h>
+	"matriz.h"
+	<math.h>
+
