@@ -71,32 +71,6 @@ int determinante_2x2(matriz m)
     return determinante;
 }
 
-int determinante_matriz(matriz m){
-
-    matriz *resultado_mats;
-    int *indices_resultado_nums;
-    int i = 0;
-    int determinante = 0;
-
-    resultado_mats = (matriz*)malloc( sizeof(matriz) * m.filas);
-    indices_resultado_nums = (matriz*)malloc( sizeof(matriz) * m.filas);
-
-    if(m.filas == 2 && m.columnas == 2){
-        determinante = determinante_2x2(m);
-    }else{
-        bajar_nivel_matriz(m, resultado_mats, indices_resultado_nums );
-        for(i=0; i < m.columnas; i++){
-            determinante = determinante + pow(-1, i)*indices_resultado_nums[i]*(determinante_matriz(resultado_mats[i]));
-            //printf("\n pow %f \n", pow(-1,i) );
-        }
-    }
-
-    free(resultado_mats);
-    free(indices_resultado_nums);
-
-    return determinante;
-}
-
 void bajar_nivel_matriz(matriz m, matriz res_mat[], int res_num[])
 {
     int f = 0;
@@ -134,4 +108,30 @@ void bajar_nivel_matriz(matriz m, matriz res_mat[], int res_num[])
         //printf("%d\n", res_num[i]);
         //mostrar_matriz(res_mat[i]);
     }
+}
+
+int determinante_matriz(matriz m){
+
+    matriz *resultado_mats;
+    int *indices_resultado_nums;
+    int i = 0;
+    int determinante = 0;
+
+    resultado_mats = (matriz*)malloc( sizeof(matriz) * m.filas);
+    indices_resultado_nums = (int*)malloc( m.filas * sizeof(int) );
+
+    if(m.filas == 2 && m.columnas == 2){
+        determinante = determinante_2x2(m);
+    }else{
+        bajar_nivel_matriz(m, resultado_mats, indices_resultado_nums );
+        for(i=0; i < m.columnas; i++){
+            determinante = determinante + pow(-1, i)*indices_resultado_nums[i]*(determinante_matriz(resultado_mats[i]));
+            //printf("\n pow %f \n", pow(-1,i) );
+        }
+    }
+
+    free(resultado_mats);
+    free(indices_resultado_nums);
+
+    return determinante;
 }

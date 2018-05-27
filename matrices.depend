@@ -20,3 +20,23 @@
 	"matriz.h"
 	<math.h>
 
+1527399654 source:c:\users\german\documents\github\matrices_laplace\matriz.c
+	<stdlib.h>
+	"matriz.h"
+	<math.h>
+
+1526912243 c:\users\german\documents\github\matrices_laplace\matriz.h
+	<stdio.h>
+
+1522015391 source:c:\users\german\documents\github\matrices_laplace\pila.c
+	"pila.h"
+
+1522015400 c:\users\german\documents\github\matrices_laplace\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1527399736 source:c:\users\german\documents\github\matrices_laplace\main.c
+	<stdio.h>
+	<stdlib.h>
+	"matriz.h"
+
